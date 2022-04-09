@@ -16,6 +16,8 @@
 		B657C16528016B6A00597F4A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = B657C15A28016B6A00597F4A /* OFL.txt */; };
 		B657C16628016B6A00597F4A /* ChakraPetch-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B657C15B28016B6A00597F4A /* ChakraPetch-Medium.ttf */; };
 		B657C16728016B6A00597F4A /* ChakraPetch-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B657C15C28016B6A00597F4A /* ChakraPetch-Regular.ttf */; };
+		B657C16B280183D400597F4A /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C16A280183D400597F4A /* FontLibrary.swift */; };
+		B657C16D2801853200597F4A /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C16C2801853200597F4A /* ColorLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B657C15A28016B6A00597F4A /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		B657C15B28016B6A00597F4A /* ChakraPetch-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Medium.ttf"; sourceTree = "<group>"; };
 		B657C15C28016B6A00597F4A /* ChakraPetch-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Regular.ttf"; sourceTree = "<group>"; };
+		B657C16A280183D400597F4A /* FontLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontLibrary.swift; sourceTree = "<group>"; };
+		B657C16C2801853200597F4A /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 		B657C14F28016A6D00597F4A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B657C16A280183D400597F4A /* FontLibrary.swift */,
+				B657C16C2801853200597F4A /* ColorLibrary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B657C16B280183D400597F4A /* FontLibrary.swift in Sources */,
+				B657C16D2801853200597F4A /* ColorLibrary.swift in Sources */,
 				B657C14B280167DD00597F4A /* MainViewController.swift in Sources */,
 				B657C1352801675200597F4A /* AppDelegate.swift in Sources */,
 				B657C1372801675200597F4A /* SceneDelegate.swift in Sources */,
