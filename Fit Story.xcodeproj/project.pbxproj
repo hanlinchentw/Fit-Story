@@ -41,6 +41,7 @@
 		B657C16C2801853200597F4A /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
 		B657C16E280189E900597F4A /* IconLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLibrary.swift; sourceTree = "<group>"; };
 		B657C17128018D7A00597F4A /* HexButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexButton.swift; sourceTree = "<group>"; };
+		B657C1742801DE7700597F4A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../../Downloads/RxSwift.xcframework/ios-arm64_armv7/RxSwift.framework"; sourceTree = "<group>"; };
 		DA9C0B6044FA33E3AA96C813 /* Pods-Fit Story.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit Story.release.xcconfig"; path = "Target Support Files/Pods-Fit Story/Pods-Fit Story.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +60,7 @@
 		51A292C6673E809C44B0B23B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B657C1742801DE7700597F4A /* RxSwift.framework */,
 				2DD65775479E11CF29FF1FB6 /* Pods_Fit_Story.framework */,
 			);
 			name = Frameworks;
