@@ -18,6 +18,7 @@
 		B657C16728016B6A00597F4A /* ChakraPetch-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B657C15C28016B6A00597F4A /* ChakraPetch-Regular.ttf */; };
 		B657C16B280183D400597F4A /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C16A280183D400597F4A /* FontLibrary.swift */; };
 		B657C16D2801853200597F4A /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C16C2801853200597F4A /* ColorLibrary.swift */; };
+		B657C16F280189E900597F4A /* IconLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C16E280189E900597F4A /* IconLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B657C15C28016B6A00597F4A /* ChakraPetch-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Regular.ttf"; sourceTree = "<group>"; };
 		B657C16A280183D400597F4A /* FontLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontLibrary.swift; sourceTree = "<group>"; };
 		B657C16C2801853200597F4A /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
+		B657C16E280189E900597F4A /* IconLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				B657C16A280183D400597F4A /* FontLibrary.swift */,
 				B657C16C2801853200597F4A /* ColorLibrary.swift */,
+				B657C16E280189E900597F4A /* IconLibrary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				B657C16B280183D400597F4A /* FontLibrary.swift in Sources */,
 				B657C16D2801853200597F4A /* ColorLibrary.swift in Sources */,
+				B657C16F280189E900597F4A /* IconLibrary.swift in Sources */,
 				B657C14B280167DD00597F4A /* MainViewController.swift in Sources */,
 				B657C1352801675200597F4A /* AppDelegate.swift in Sources */,
 				B657C1372801675200597F4A /* SceneDelegate.swift in Sources */,

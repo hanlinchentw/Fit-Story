@@ -10,28 +10,27 @@ import UIKit
 
 extension UIColor {
   static var darkPurple: UIColor {
-    return UIColor(named: "darkPurple")!
-  }
+    UIColor(named: "darkPurple")!
+  };
   static var purple: UIColor {
-    return UIColor(named: "purple")!
-  }
+    UIColor(named: "purple")!
+  };
   static var lightPurple: UIColor {
-    return UIColor(named: "lightPurple")!
-  }
+    UIColor(named: "lightPurple")!
+  };
   static var darkGreen: UIColor {
-    return UIColor(named: "darkGreen")!
-  }
+    UIColor(named: "darkGreen")!
+  };
   static var green: UIColor {
-    return UIColor(named: "green")!
-  }
+    UIColor(named: "green")!
+  };
   static var lightGreen: UIColor {
-    return UIColor(named: "lightGreen")!
-  }
+    UIColor(named: "lightGreen")!
+  };
   static var darkRed: UIColor {
-    return UIColor(named: "darkRed")!
-  }
+    UIColor(named: "darkRed")!
+  };
   static var red: UIColor {
-    return UIColor(named: "red")!
-  }
+    UIColor(named: "red")!
+  };
 }
-
