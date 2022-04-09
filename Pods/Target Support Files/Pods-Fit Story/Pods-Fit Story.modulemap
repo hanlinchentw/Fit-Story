@@ -1,0 +1,6 @@
+framework module Pods_Fit_Story {
+  umbrella header "Pods-Fit Story-umbrella.h"
+
+  export *
+  module * { export * }
+}
