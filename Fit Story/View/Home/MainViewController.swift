@@ -10,7 +10,9 @@ import SnapKit
 
 class MainViewController: UIViewController {
   private let hexBtn: HexButton = {
-    let btn = HexButton(icon: UIImage.switchIcon, text: "Calendar")
+    let btn = HexButton(with: .init(icon: UIImage.switchIcon, text: "Calendar", onPress: {
+
+    }))
     return btn
   }()
   override func viewDidLoad() {
@@ -19,8 +21,8 @@ class MainViewController: UIViewController {
     view.addSubview(hexBtn)
     hexBtn.snp.makeConstraints { make in
       make.center.equalTo(self.view)
-      make.width.equalTo(200)
-      make.height.equalTo(72)
+      make.width.equalTo(150)
+      make.height.equalTo(32)
     }
   }
 }

@@ -7,18 +7,29 @@
 
 import UIKit
 
+struct HexButtonProps {
+  let icon: UIImage
+  let text: String
+  let onPress: () -> Void
+}
 class HexButton: UIButton {
   let slope: CGFloat = 8
-  init(icon: UIImage, text: String) {
+  let onPress: () -> Void
+  init(with props: HexButtonProps) {
+    self.onPress = props.onPress
     super.init(frame: .zero)
     self.titleLabel?.font = UIFont.semiBoldChakra(of: UIFont.H6)
-    self.setImage(icon, for: .normal)
-    self.setTitle(text, for: .normal)
+    self.setImage(props.icon, for: .normal)
+    self.setTitle(props.text, for: .normal)
     self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: -6)
     self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -6, bottom: 0, right: 6)
+    self.addTarget(self, action: #selector(buttonOnPress), for: .touchUpInside)
   }
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  @objc func buttonOnPress() {
+    onPress()
   }
   override func draw(_ rect: CGRect) {
     let path = makePath()
