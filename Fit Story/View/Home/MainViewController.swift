@@ -7,22 +7,19 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
-  private let hexBtn: HexButton = {
-    let btn = HexButton(with: .init(icon: UIImage.switchIcon, text: "Calendar", onPress: {
-
-    }))
-    return btn
-  }()
+  private let scalePickerContainer = ScalePickerContainer()
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .black
-    view.addSubview(hexBtn)
-    hexBtn.snp.makeConstraints { make in
+    view.addSubview(scalePickerContainer)
+    scalePickerContainer.snp.makeConstraints { make in
       make.center.equalTo(self.view)
-      make.width.equalTo(150)
-      make.height.equalTo(32)
+      make.width.equalTo(self.view.frame.width)
+      make.height.equalTo(92)
     }
   }
 }

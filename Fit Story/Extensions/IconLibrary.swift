@@ -67,4 +67,7 @@ extension UIImage {
   static var ovalClose: UIImage {
     UIImage(named: "oval_close")!
   }
+  static var middleBar: UIImage {
+    UIImage(named: "middle_bar")!
+  }
 }

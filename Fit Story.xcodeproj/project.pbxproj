@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		03E87C93CBFD56454C746BA6 /* Pods_Fit_Story.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD65775479E11CF29FF1FB6 /* Pods_Fit_Story.framework */; };
+		B6365A252802B4A700462018 /* ScalePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A242802B4A700462018 /* ScalePickerCell.swift */; };
+		B6365A272802C07700462018 /* ScalePickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A262802C07700462018 /* ScalePickerCellViewModel.swift */; };
+		B6365A29280319BE00462018 /* ScalePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A28280319BE00462018 /* ScalePickerViewModel.swift */; };
+		B6365A2B28031F2A00462018 /* ScalePickerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A2A28031F2A00462018 /* ScalePickerContainer.swift */; };
 		B657C1352801675200597F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C1342801675200597F4A /* AppDelegate.swift */; };
 		B657C1372801675200597F4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C1362801675200597F4A /* SceneDelegate.swift */; };
 		B657C13E2801675400597F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B657C13D2801675400597F4A /* Assets.xcassets */; };
@@ -21,11 +25,16 @@
 		B657C16D2801853200597F4A /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C16C2801853200597F4A /* ColorLibrary.swift */; };
 		B657C16F280189E900597F4A /* IconLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C16E280189E900597F4A /* IconLibrary.swift */; };
 		B657C17228018D7A00597F4A /* HexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C17128018D7A00597F4A /* HexButton.swift */; };
+		B657C1792802B33600597F4A /* ScalePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C1782802B33600597F4A /* ScalePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2DD65775479E11CF29FF1FB6 /* Pods_Fit_Story.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fit_Story.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A21B4BC4875C338B1BA61C /* Pods-Fit Story.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit Story.debug.xcconfig"; path = "Target Support Files/Pods-Fit Story/Pods-Fit Story.debug.xcconfig"; sourceTree = "<group>"; };
+		B6365A242802B4A700462018 /* ScalePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerCell.swift; sourceTree = "<group>"; };
+		B6365A262802C07700462018 /* ScalePickerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerCellViewModel.swift; sourceTree = "<group>"; };
+		B6365A28280319BE00462018 /* ScalePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerViewModel.swift; sourceTree = "<group>"; };
+		B6365A2A28031F2A00462018 /* ScalePickerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerContainer.swift; sourceTree = "<group>"; };
 		B657C1312801675200597F4A /* Fit Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fit Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B657C1342801675200597F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B657C1362801675200597F4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +51,7 @@
 		B657C16E280189E900597F4A /* IconLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLibrary.swift; sourceTree = "<group>"; };
 		B657C17128018D7A00597F4A /* HexButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexButton.swift; sourceTree = "<group>"; };
 		B657C1742801DE7700597F4A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../../Downloads/RxSwift.xcframework/ios-arm64_armv7/RxSwift.framework"; sourceTree = "<group>"; };
+		B657C1782802B33600597F4A /* ScalePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePicker.swift; sourceTree = "<group>"; };
 		DA9C0B6044FA33E3AA96C813 /* Pods-Fit Story.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit Story.release.xcconfig"; path = "Target Support Files/Pods-Fit Story/Pods-Fit Story.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +184,11 @@
 			isa = PBXGroup;
 			children = (
 				B657C17128018D7A00597F4A /* HexButton.swift */,
+				B6365A2A28031F2A00462018 /* ScalePickerContainer.swift */,
+				B657C1782802B33600597F4A /* ScalePicker.swift */,
+				B6365A28280319BE00462018 /* ScalePickerViewModel.swift */,
+				B6365A242802B4A700462018 /* ScalePickerCell.swift */,
+				B6365A262802C07700462018 /* ScalePickerCellViewModel.swift */,
 			);
 			path = Reuseable;
 			sourceTree = "<group>";
@@ -316,10 +331,15 @@
 			files = (
 				B657C16B280183D400597F4A /* FontLibrary.swift in Sources */,
 				B657C16D2801853200597F4A /* ColorLibrary.swift in Sources */,
+				B657C1792802B33600597F4A /* ScalePicker.swift in Sources */,
+				B6365A272802C07700462018 /* ScalePickerCellViewModel.swift in Sources */,
+				B6365A29280319BE00462018 /* ScalePickerViewModel.swift in Sources */,
 				B657C16F280189E900597F4A /* IconLibrary.swift in Sources */,
+				B6365A252802B4A700462018 /* ScalePickerCell.swift in Sources */,
 				B657C14B280167DD00597F4A /* MainViewController.swift in Sources */,
 				B657C1352801675200597F4A /* AppDelegate.swift in Sources */,
 				B657C17228018D7A00597F4A /* HexButton.swift in Sources */,
+				B6365A2B28031F2A00462018 /* ScalePickerContainer.swift in Sources */,
 				B657C1372801675200597F4A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
