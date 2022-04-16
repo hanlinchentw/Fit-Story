@@ -14,7 +14,7 @@ class ScalePickerContainer: UIView {
 // MARK: - Properties
   // Rx
   let fakeDatasource: Observable<[Double]> = Observable.just((0...1000).map { Double($0)/10 })
-  var scaleNumber = BehaviorSubject<Double>(value: 0.0)
+  var scaleNumber = PublishSubject<Double>()
   private let bag = DisposeBag()
   // UI
   private var scalePicker: ScalePicker
@@ -25,7 +25,6 @@ class ScalePickerContainer: UIView {
   }()
   private var displayScaleLabel: UILabel = {
     let label = UILabel()
-    label.text = "10"
     label.textColor = .darkGreen
     label.font = UIFont.semiBoldChakra(of: UIFont.H4)
     return label
@@ -33,7 +32,7 @@ class ScalePickerContainer: UIView {
 // MARK: - Lifecycle
   override init(frame: CGRect) {
     scalePicker = ScalePicker(vm: ScalePickerViewModel(inputs: .init(dataSource: fakeDatasource, scaleNumber: scaleNumber.asObservable())))
-    super.init(frame: frame)
+    super.init(frame: .zero)
     addSubview(scalePicker)
     scalePicker.snp.makeConstraints { make in
       make.left.equalToSuperview()
@@ -55,6 +54,10 @@ class ScalePickerContainer: UIView {
   }
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    scalePicker.contentInset = UIEdgeInsets(top: 0, left: self.frame.width/2 - 7, bottom: 0, right: self.frame.width/2 - 7)
   }
 // MARK: - Binding
   func binding() {

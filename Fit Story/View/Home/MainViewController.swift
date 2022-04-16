@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
   private let scalePickerContainer = ScalePickerContainer()
   private let textInput: UITextField = {
     let tf = UITextField()
-    tf.text = "1"
+    tf.text = "0.0"
     tf.textColor = .white
     tf.layer.cornerRadius = 12
     tf.layer.borderWidth = 1
@@ -38,11 +38,14 @@ class MainViewController: UIViewController {
       make.height.equalTo(72)
     }
     textInput.rx.text
-      .orEmpty
-      .map({ Double($0)! })
-      .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
+      .filter { $0 != nil && $0?.isEmpty == false }
+      .map({ text in
+        guard let text = text,
+                let textNumber = Double(text) else { return Double() }
+        return Double(textNumber)
+      })
+      .distinctUntilChanged()
       .bind(to: scalePickerContainer.scaleNumber)
-
       .disposed(by: bag)
   }
 }
