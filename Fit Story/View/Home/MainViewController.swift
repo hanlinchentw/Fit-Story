@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
   private let scalePickerContainer = ScalePickerContainer()
   private let textInput: UITextField = {
     let tf = UITextField()
-    tf.text = "0.0"
+    tf.placeholder = "0.0"
     tf.textColor = .white
     tf.layer.cornerRadius = 12
     tf.layer.borderWidth = 1
@@ -33,19 +33,26 @@ class MainViewController: UIViewController {
     }
     view.addSubview(textInput)
     textInput.snp.makeConstraints { make in
-      make.bottom.equalTo(scalePickerContainer.snp.top)
+      make.bottom.equalTo(scalePickerContainer.snp.top).offset(-150)
       make.width.equalTo(200)
       make.height.equalTo(72)
+      make.centerX.equalToSuperview()
     }
-    textInput.rx.text
-      .filter { $0 != nil && $0?.isEmpty == false }
-      .map({ text in
-        guard let text = text,
+    textInput.rx.controlEvent(.allEditingEvents)
+      .filter { self.textInput.text != nil && self.textInput.text?.isEmpty == false }
+      .map({ _ in
+        guard let text = self.textInput.text,
                 let textNumber = Double(text) else { return Double() }
         return Double(textNumber)
       })
       .distinctUntilChanged()
       .bind(to: scalePickerContainer.scaleNumber)
+      .disposed(by: bag)
+    scalePickerContainer.scrollInput
+      .filter { $0 != nil }
+      .map({String($0!)})
+      .distinctUntilChanged()
+      .bind(to: textInput.rx.text)
       .disposed(by: bag)
   }
 }

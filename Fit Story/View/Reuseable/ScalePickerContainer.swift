@@ -9,12 +9,12 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
-
+let fakeDatasource: [Double] = (0...1000).map { Double($0)/10 }
 class ScalePickerContainer: UIView {
 // MARK: - Properties
   // Rx
-  let fakeDatasource: Observable<[Double]> = Observable.just((0...1000).map { Double($0)/10 })
   var scaleNumber = PublishSubject<Double>()
+  var scrollInput: Observable<Double?>
   private let bag = DisposeBag()
   // UI
   private var scalePicker: ScalePicker
@@ -31,7 +31,8 @@ class ScalePickerContainer: UIView {
   }()
 // MARK: - Lifecycle
   override init(frame: CGRect) {
-    scalePicker = ScalePicker(vm: ScalePickerViewModel(inputs: .init(dataSource: fakeDatasource, scaleNumber: scaleNumber.asObservable())))
+    scalePicker = ScalePicker(dataSource: fakeDatasource, userTypingValue: scaleNumber.asObservable())
+    scrollInput = scalePicker.vm.outputs.userScrollCorrespondingNumber
     super.init(frame: .zero)
     addSubview(scalePicker)
     scalePicker.snp.makeConstraints { make in
@@ -63,6 +64,11 @@ class ScalePickerContainer: UIView {
   func binding() {
     scaleNumber
       .map({String($0)})
+      .bind(to: displayScaleLabel.rx.text)
+      .disposed(by: bag)
+    scrollInput
+      .filter({$0 != nil})
+      .map({String($0!)})
       .bind(to: displayScaleLabel.rx.text)
       .disposed(by: bag)
   }
