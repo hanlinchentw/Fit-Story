@@ -7,16 +7,17 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class ScalePickerContainer: UIView {
-  private let scalePicker: ScalePicker = {
-    let layout = UICollectionViewFlowLayout()
-    layout.scrollDirection = .horizontal
-    layout.itemSize = CGSize(width: 16, height: 48)
-    layout.minimumLineSpacing = -5
-    let picker = ScalePicker(frame: .zero, collectionViewLayout: layout)
-    return picker
-  }()
+// MARK: - Properties
+  // Rx
+  let fakeDatasource: Observable<[Double]> = Observable.just((0...1000).map { Double($0)/10 })
+  var scaleNumber = BehaviorSubject<Double>(value: 0.0)
+  private let bag = DisposeBag()
+  // UI
+  private var scalePicker: ScalePicker
   private let middleBarImageView: UIImageView = {
     let iv = UIImageView(image: UIImage.middleBar)
     iv.contentMode = .scaleAspectFit
@@ -29,7 +30,9 @@ class ScalePickerContainer: UIView {
     label.font = UIFont.semiBoldChakra(of: UIFont.H4)
     return label
   }()
+// MARK: - Lifecycle
   override init(frame: CGRect) {
+    scalePicker = ScalePicker(vm: ScalePickerViewModel(inputs: .init(dataSource: fakeDatasource, scaleNumber: scaleNumber.asObservable())))
     super.init(frame: frame)
     addSubview(scalePicker)
     scalePicker.snp.makeConstraints { make in
@@ -48,9 +51,16 @@ class ScalePickerContainer: UIView {
       make.centerX.equalToSuperview()
       make.bottom.equalTo(middleBarImageView.snp.top).offset(-8)
     }
+    binding()
   }
-
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+// MARK: - Binding
+  func binding() {
+    scaleNumber
+      .map({String($0)})
+      .bind(to: displayScaleLabel.rx.text)
+      .disposed(by: bag)
   }
 }

@@ -30,7 +30,6 @@ class ScalePickerCell: UICollectionViewCell {
 // MARK: - Lifecycle
   override init(frame: CGRect) {
     super.init(frame: .zero)
-    self.contentView.clipsToBounds = false
     setUpUI()
   }
   required init?(coder: NSCoder) {

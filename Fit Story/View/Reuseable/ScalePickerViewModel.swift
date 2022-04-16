@@ -6,11 +6,26 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class ScalePickerViewModel {
-  private let fakeDatasource: [Double] = (0...1000).map { Double($0)/10 }
-  var cellVMs: [ScalePickerCellViewModel]
-  init() {
-    self.cellVMs = fakeDatasource.map {ScalePickerCellViewModel(scaleNumber: $0)}
+  struct ScalePickerVMInputs {
+    var dataSource: Observable<[Double]>
+    var scaleNumber: Observable<Double>
+  }
+
+  var dataSourceInput: Observable<[Double]>
+  var scaleNumberInput: Observable<Double>
+
+  var currentRowOutput: Observable<Int?>
+  init(inputs: ScalePickerVMInputs) {
+    self.scaleNumberInput = inputs.scaleNumber
+    self.dataSourceInput = inputs.dataSource
+
+    self.currentRowOutput = Observable
+      .combineLatest(scaleNumberInput, dataSourceInput) { (number, source) in
+        source.firstIndex(of: number)
+      }
   }
 }

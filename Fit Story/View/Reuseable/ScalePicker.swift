@@ -11,34 +11,56 @@ import RxCocoa
 
 private let scalePickerID = "scalePickerID"
 class ScalePicker: UICollectionView {
-  let vm = ScalePickerViewModel()
+// MARK: - Properties
+  // Rx
+  var vm: ScalePickerViewModel
   let bag = DisposeBag()
-
-  override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-    super.init(frame: .zero, collectionViewLayout: layout)
-    self.showsHorizontalScrollIndicator = false
+  public var currentScale = PublishSubject<CGFloat>()
+// MARK: - Lifecycle
+  init(vm: ScalePickerViewModel) {
+    self.vm = vm
+    super.init(frame: .zero, collectionViewLayout: .init())
+    collectionViewLayout = self.layoutForCollectionView()
+    showsHorizontalScrollIndicator = false
+    self.register(ScalePickerCell.self, forCellWithReuseIdentifier: scalePickerID)
     backgroundColor = .clear
     setUpBinding()
   }
-
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  func layoutForCollectionView() -> UICollectionViewFlowLayout {
+    let customLayout = UICollectionViewFlowLayout()
+    customLayout.scrollDirection = .horizontal
+    customLayout.itemSize = CGSize(width: 16, height: 48)
+    customLayout.minimumLineSpacing = -5
+    return customLayout
+  }
+// MARK: - Binding
   func setUpBinding() {
-    self.register(ScalePickerCell.self, forCellWithReuseIdentifier: scalePickerID)
-    Observable
-      .just(vm.cellVMs)
-      .bind(to: self.rx.items) { (collectionView, row, vm) in
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: scalePickerID, for: IndexPath(row: row, section: 0)) as? ScalePickerCell else {
+    vm.dataSourceInput
+      .bind(to: self.rx.items) { (collectionView, row, scale) in
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: scalePickerID, for: IndexPath(row: row, section: 0))
+        guard let cell = cell as? ScalePickerCell else {
           return UICollectionViewCell()
         }
         cell.setupBinding()
-        cell.vm.accept(vm)
-        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
-        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint)
-
+        cell.vm.accept(.init(scaleNumber: scale))
+//        let visibleRect = CGRect(origin: offset, size: self.bounds.size)
+//        let visibleCenter = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+//        if let visibleIndexPath = self.indexPathForItem(at: visibleCenter) {
+//          return source[visibleIndexPath.row]
+//        }
         return cell
       }.disposed(by: bag)
+    vm.currentRowOutput
+      .asDriver(onErrorJustReturn: nil)
+      .drive { optionRow in
+        if let row = optionRow {
+          print("Row: \(row)")
+          let indexPath = IndexPath(row: row, section: 0)
+          self.scrollToItem(at: indexPath, at: [], animated: true)
+        }
+    }.disposed(by: bag)
   }
 }

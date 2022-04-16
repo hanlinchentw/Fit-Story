@@ -8,8 +8,8 @@
 import UIKit
 
 class ScalePickerCellViewModel {
-  let scaleNumber: Double
-  init(scaleNumber:Double) {
+  let scaleNumber:  Double
+  init(scaleNumber: Double) {
     self.scaleNumber = scaleNumber
   }
   var scaleHeight: CGFloat {
