@@ -12,6 +12,7 @@
 		B6365A272802C07700462018 /* ScalePickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A262802C07700462018 /* ScalePickerCellViewModel.swift */; };
 		B6365A29280319BE00462018 /* ScalePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A28280319BE00462018 /* ScalePickerViewModel.swift */; };
 		B6365A2B28031F2A00462018 /* ScalePickerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A2A28031F2A00462018 /* ScalePickerContainer.swift */; };
+		B6365A2D280BD4F500462018 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A2C280BD4F500462018 /* MainTabBarController.swift */; };
 		B657C1352801675200597F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C1342801675200597F4A /* AppDelegate.swift */; };
 		B657C1372801675200597F4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C1362801675200597F4A /* SceneDelegate.swift */; };
 		B657C13E2801675400597F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B657C13D2801675400597F4A /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		B6365A262802C07700462018 /* ScalePickerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerCellViewModel.swift; sourceTree = "<group>"; };
 		B6365A28280319BE00462018 /* ScalePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerViewModel.swift; sourceTree = "<group>"; };
 		B6365A2A28031F2A00462018 /* ScalePickerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerContainer.swift; sourceTree = "<group>"; };
+		B6365A2C280BD4F500462018 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B657C1312801675200597F4A /* Fit Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fit Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B657C1342801675200597F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B657C1362801675200597F4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				B657C14A280167DD00597F4A /* MainViewController.swift */,
+				B6365A2C280BD4F500462018 /* MainTabBarController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				B6365A29280319BE00462018 /* ScalePickerViewModel.swift in Sources */,
 				B657C16F280189E900597F4A /* IconLibrary.swift in Sources */,
 				B6365A252802B4A700462018 /* ScalePickerCell.swift in Sources */,
+				B6365A2D280BD4F500462018 /* MainTabBarController.swift in Sources */,
 				B657C14B280167DD00597F4A /* MainViewController.swift in Sources */,
 				B657C1352801675200597F4A /* AppDelegate.swift in Sources */,
 				B657C17228018D7A00597F4A /* HexButton.swift in Sources */,
