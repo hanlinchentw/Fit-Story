@@ -9,38 +9,29 @@ import UIKit
 
 extension UIFont {
   // Font Scale
-  static var H1: CGFloat {
-    CGFloat(32)
+  enum FontSize: CGFloat {
+    case h1 = 32
+    case h2 = 28
+    case h3 = 24
+    case h4 = 20
+    case h5 = 17
+    case h6 = 16
+    case h7 = 14
+    case h8 = 12
   }
-  static var H2: CGFloat {
-    CGFloat(28)
-  }
-  static var H3: CGFloat {
-    CGFloat(24)
-  }
-  static var H4: CGFloat {
-    CGFloat(20)
-  }
-  static var H5: CGFloat {
-    CGFloat(17)
-  }
-  static var H6: CGFloat {
-    CGFloat(16)
-  }
-  static var H7: CGFloat {
-    CGFloat(14)
-  }
-  static var H8: CGFloat {
-    CGFloat(12)
+  enum FontWeight {
+    case regular
+    case medium
+    case semiBold
   }
   // Chakra Petch
-  static func semiBoldChakra(of size: CGFloat) -> UIFont? {
-    UIFont(name: "ChakraPetch-SemiBold", size: size)
+  static func semiBoldChakra(of size: FontSize) -> UIFont? {
+    UIFont(name: "ChakraPetch-SemiBold", size: size.rawValue)
   }
-  static func mediumChakra(of size: CGFloat) -> UIFont? {
-    UIFont(name: "ChakraPetch-Medium", size: size)
+  static func mediumChakra(of size: FontSize) -> UIFont? {
+    UIFont(name: "ChakraPetch-Medium", size: size.rawValue)
   }
-  static func regularChakra(of size: CGFloat) -> UIFont? {
-    UIFont(name: "ChakraPetch-Regular", size: size)
+  static func regularChakra(of size: FontSize) -> UIFont? {
+    UIFont(name: "ChakraPetch-Regular", size: size.rawValue)
   }
 }

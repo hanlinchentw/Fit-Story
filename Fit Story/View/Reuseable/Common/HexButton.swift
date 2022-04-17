@@ -18,7 +18,7 @@ class HexButton: UIButton {
   init(with props: HexButtonProps) {
     self.onPress = props.onPress
     super.init(frame: .zero)
-    self.titleLabel?.font = UIFont.semiBoldChakra(of: UIFont.H6)
+    self.titleLabel?.font = UIFont.semiBoldChakra(of: .h6)
     self.setImage(props.icon, for: .normal)
     self.setTitle(props.text, for: .normal)
     self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: -6)

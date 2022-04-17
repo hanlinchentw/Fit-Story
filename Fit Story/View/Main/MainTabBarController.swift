@@ -12,7 +12,6 @@ class MainTabBarController: UITabBarController {
 // MARK: - Tab View
   private static let home = HomeViewController()
   private static let progress = ProgressViewController()
-  private static let album = AlbumViewController()
 // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,31 +23,29 @@ class MainTabBarController: UITabBarController {
     UITabBar.appearance().isTranslucent = true
     UITabBar.appearance().shadowImage = UIImage()
     UITabBar.appearance().backgroundImage = UIImage()
-    UITabBar.appearance().barTintColor = .background
+    UITabBar.appearance().barTintColor = .background1
+    UIApplication.shared.statusBarStyle = .lightContent
 
     let tab1 = createTabItem(withDefaultImage: UIImage.planetDefault,
                              withSelectedImage: UIImage.planetActive,
                              containVC: MainTabBarController.home)
 
-    let tab2 = createTabItem(withDefaultImage: UIImage.chartDefault,
+    let tab2 = createTabItem(withDefaultImage: UIImage.createRecord,
+                             withSelectedImage: UIImage.createRecord,
+                             containVC: UIViewController(),
+                             withTag: 2)
+
+    let tab3 = createTabItem(withDefaultImage: UIImage.chartDefault,
                              withSelectedImage: UIImage.chartActive,
                              containVC: MainTabBarController.progress)
 
-    let tab3 = createTabItem(withDefaultImage: UIImage.albumDefault,
-                             withSelectedImage: UIImage.albumActive,
-                             containVC: MainTabBarController.album)
-
-    let tab4 = createTabItem(withDefaultImage: UIImage.createRecord,
-                             withSelectedImage: UIImage.createRecord,
-                             containVC: UIViewController(),
-                             withTag: 3)
-    self.viewControllers = [tab1, tab2, tab3, tab4]
+    self.viewControllers = [tab1, tab2, tab3]
   }
 }
 // MARK: - TabBarDelegate
 extension MainTabBarController: UITabBarControllerDelegate {
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-    if (viewController.tabBarItem.tag == 3) {
+    if (viewController.tabBarItem.tag == 2) {
       let nav = UINavigationController(rootViewController: CreateRecordViewController())
       let topVC = PresentationHelper.shared.topViewController
       topVC?.present(nav, animated: true, completion: nil)
@@ -57,18 +54,19 @@ extension MainTabBarController: UITabBarControllerDelegate {
     return true
   }
   override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-    guard let index = tabBar.items?.firstIndex(of: item), let imageView = tabBar.subviews[index+1].subviews.first as? UIImageView else {
+    guard let index = tabBar.items?.firstIndex(of: item),
+          let imageView = tabBar.subviews[index+1].subviews.first as? UIImageView else {
       return
     }
     let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-    bounceAnimation.values = [1.0, 1.4, 0.9, 1.02, 1.0]
-    bounceAnimation.duration = TimeInterval(0.3)
+    bounceAnimation.values = [1.0, 1.3, 0.9, 1.02, 1.0]
+    bounceAnimation.duration = TimeInterval(0.43)
     bounceAnimation.calculationMode = CAAnimationCalculationMode.cubic
 
     imageView.layer.add(bounceAnimation, forKey: nil)
   }
 }
-
+// MARK: - Helpers
 extension MainTabBarController {
   func createTabItem(withDefaultImage defaultImage: UIImage, withSelectedImage selectedImage: UIImage, containVC vc: UIViewController, withTag tag: Int? = nil) -> UIViewController {
     let nav = UINavigationController(rootViewController: vc)

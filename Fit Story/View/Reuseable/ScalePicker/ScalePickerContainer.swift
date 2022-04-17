@@ -26,7 +26,7 @@ class ScalePickerContainer: UIView {
   private var displayScaleLabel: UILabel = {
     let label = UILabel()
     label.textColor = .darkGreen
-    label.font = UIFont.semiBoldChakra(of: UIFont.H4)
+    label.font = UIFont.semiBoldChakra(of: .h4)
     return label
   }()
 // MARK: - Lifecycle

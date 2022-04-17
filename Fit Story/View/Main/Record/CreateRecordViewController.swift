@@ -11,47 +11,41 @@ import RxSwift
 
 class CreateRecordViewController: UIViewController {
   private let bag = DisposeBag()
-  private let scalePickerContainer = ScalePickerContainer()
-  private let textInput: UITextField = {
-    let tf = UITextField()
-    tf.placeholder = "0.0"
-    tf.textColor = .white
-    tf.layer.cornerRadius = 12
-    tf.layer.borderWidth = 1
-    tf.layer.borderColor  = UIColor.white.cgColor
-    return tf
+  private let selectedDateHeader: UIView = {
+    let view = UIView()
+    let label = UILabel().createChakraLabel(text: "Today", withWeight: .medium, withFont: .h6, withColor: .white)
+    view.addSubview(label)
+    label.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    return view
   }()
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .background
-    view.addSubview(scalePickerContainer)
-    scalePickerContainer.snp.makeConstraints { make in
-      make.center.equalTo(self.view)
-      make.width.equalTo(self.view.frame.width)
-      make.height.equalTo(92)
+    setupNavBar()
+    setupNavHeaderBtn()
+    view.backgroundColor = .background1
+  }
+
+  func setupNavBar() {
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.close, style: .plain, target: self, action: #selector(handleCloseBtnTapped))
+  }
+  func setupNavHeaderBtn() {
+    guard let nav = self.navigationController else { return }
+    nav.navigationBar.addSubview(selectedDateHeader)
+    selectedDateHeader.snp.makeConstraints { make in
+      make.center.equalToSuperview()
     }
-    view.addSubview(textInput)
-    textInput.snp.makeConstraints { make in
-      make.bottom.equalTo(scalePickerContainer.snp.top).offset(-150)
-      make.width.equalTo(200)
-      make.height.equalTo(72)
-      make.centerX.equalToSuperview()
-    }
-    textInput.rx.controlEvent(.allEditingEvents)
-      .filter { self.textInput.text != nil && self.textInput.text?.isEmpty == false }
-      .map({ _ in
-        guard let text = self.textInput.text,
-                let textNumber = Double(text) else { return Double() }
-        return Double(textNumber)
-      })
-      .distinctUntilChanged()
-      .bind(to: scalePickerContainer.scaleNumber)
-      .disposed(by: bag)
-    scalePickerContainer.scrollInput
-      .filter { $0 != nil }
-      .map({String($0!)})
-      .distinctUntilChanged()
-      .bind(to: textInput.rx.text)
-      .disposed(by: bag)
+    let tap = UITapGestureRecognizer()
+    selectedDateHeader.addGestureRecognizer(tap)
+    tap.rx.event.bind { [weak self] _ in
+      let datePicker = DatePickerViewController()
+      datePicker.modalPresentationStyle = .overFullScreen
+      datePicker.modalTransitionStyle = .crossDissolve
+      self?.present(datePicker, animated: true, completion: nil)
+    }.disposed(by: bag)
+  }
+  @objc func handleCloseBtnTapped() {
+    self.navigationController?.dismiss(animated: true, completion: nil)
   }
 }

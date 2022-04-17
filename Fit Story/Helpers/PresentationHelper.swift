@@ -11,6 +11,10 @@ class PresentationHelper: NSObject {
   static let shared = PresentationHelper()
 
   var topViewController: UIViewController? {
-    return UIApplication.shared.keyWindow?.rootViewController
+    return UIApplication
+      .shared
+      .connectedScenes
+      .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+      .first { $0.isKeyWindow }?.rootViewController
   }
 }

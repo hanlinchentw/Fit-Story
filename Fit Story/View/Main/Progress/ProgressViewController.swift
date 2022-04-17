@@ -9,6 +9,6 @@ import UIKit
 
 class ProgressViewController: UIViewController {
   override func viewDidLoad() {
-    view.backgroundColor = .background
+    view.backgroundColor = .background1
   }
 }

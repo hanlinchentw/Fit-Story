@@ -8,8 +8,11 @@
 import UIKit
 
 extension UIColor {
-  static var background: UIColor {
-    UIColor(named: "background")!
+  static var background1: UIColor {
+    UIColor(named: "background1")!
+  }
+  static var background2: UIColor {
+    UIColor(named: "background2")!
   }
   static var darkPurple: UIColor {
     UIColor(named: "darkPurple")!
