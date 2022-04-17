@@ -6,31 +6,26 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 struct HexButtonProps {
   let icon: UIImage
   let text: String
-  let onPress: () -> Void
+  let onPressd: () -> Void
 }
 class HexButton: UIButton {
-  let slope: CGFloat = 8
-  let onPress: () -> Void
+  let bag = DisposeBag()
+
   init(with props: HexButtonProps) {
-    self.onPress = props.onPress
     super.init(frame: .zero)
-    self.titleLabel?.font = UIFont.semiBoldChakra(of: .h6)
-    self.setImage(props.icon, for: .normal)
-    self.setTitle(props.text, for: .normal)
-    self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: -6)
-    self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -6, bottom: 0, right: 6)
-    self.addTarget(self, action: #selector(buttonOnPress), for: .touchUpInside)
+    setupButtonProps(withProps: props)
+    setupButtonTapBinding(onPressd: props.onPressd)
   }
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  @objc func buttonOnPress() {
-    onPress()
-  }
+
   override func draw(_ rect: CGRect) {
     let path = makePath()
     let layer = CAShapeLayer()
@@ -40,8 +35,10 @@ class HexButton: UIButton {
     layer.fillColor = UIColor.clear.cgColor
     self.layer.addSublayer(layer)
   }
+
   func makePath() -> UIBezierPath {
     let path = UIBezierPath()
+    let slope: CGFloat = 8
     path.move(to: CGPoint(x: bounds.minX+slope, y: bounds.minY))
     path.addLine(to: CGPoint(x: bounds.maxX - slope, y: bounds.minY))
     path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.minY+slope))
@@ -53,5 +50,20 @@ class HexButton: UIButton {
     path.addLine(to: CGPoint(x: bounds.minX+slope, y: bounds.minY))
     path.close()
     return path
+  }
+}
+
+extension HexButton {
+  func setupButtonProps(withProps props: HexButtonProps) {
+    self.titleLabel?.font = UIFont.semiBoldChakra(of: .h6)
+    self.setImage(props.icon, for: .normal)
+    self.setTitle(props.text, for: .normal)
+    self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: -6)
+    self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -6, bottom: 0, right: 6)
+  }
+  func setupButtonTapBinding(onPressd: @escaping() -> Void) {
+    self.rx.tap.bind { _ in
+      onPressd()
+    }.disposed(by: bag)
   }
 }
