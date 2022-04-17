@@ -35,23 +35,7 @@ class ScalePickerContainer: UIView {
     scalePicker = ScalePicker(dataSource: fakeDatasource, userTypingValue: scaleNumber.asObservable())
     scrollInput = scalePicker.vm.outputs.userScrollCorrespondingNumber
     super.init(frame: .zero)
-    addSubview(scalePicker)
-    scalePicker.snp.makeConstraints { make in
-      make.left.equalToSuperview()
-      make.bottom.equalToSuperview()
-      make.top.equalToSuperview()
-      make.right.greaterThanOrEqualToSuperview()
-    }
-    addSubview(middleBarImageView)
-    middleBarImageView.snp.makeConstraints { make in
-      make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview().offset(-16)
-    }
-    addSubview(displayScaleLabel)
-    displayScaleLabel.snp.makeConstraints { make in
-      make.centerX.equalToSuperview()
-      make.bottom.equalTo(middleBarImageView.snp.top).offset(-8)
-    }
+    setupUI()
     binding()
   }
   required init?(coder: NSCoder) {
@@ -72,5 +56,27 @@ class ScalePickerContainer: UIView {
       .map({String($0!)})
       .bind(to: displayScaleLabel.rx.text)
       .disposed(by: bag)
+  }
+}
+// MARK: - UI
+extension ScalePickerContainer {
+  func setupUI() {
+    addSubview(scalePicker)
+    scalePicker.snp.makeConstraints { make in
+      make.left.equalToSuperview()
+      make.bottom.equalToSuperview()
+      make.top.equalToSuperview()
+      make.right.greaterThanOrEqualToSuperview()
+    }
+    addSubview(middleBarImageView)
+    middleBarImageView.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().offset(-16)
+    }
+    addSubview(displayScaleLabel)
+    displayScaleLabel.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.bottom.equalTo(middleBarImageView.snp.top).offset(-8)
+    }
   }
 }
