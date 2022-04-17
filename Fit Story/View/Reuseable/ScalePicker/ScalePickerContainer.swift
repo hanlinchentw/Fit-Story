@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+
 let fakeDatasource: [Double] = (0...1000).map { Double($0)/10 }
 class ScalePickerContainer: UIView {
 // MARK: - Properties
