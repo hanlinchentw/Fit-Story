@@ -1,16 +1,15 @@
 //
-//  MainViewController.swift
+//  CreateRecordViewController.swift
 //  Fit Story
 //
-//  Created by 陳翰霖 on 2022/4/9.
+//  Created by 陳翰霖 on 2022/4/17.
 //
 
 import UIKit
-import SnapKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
-class MainViewController: UIViewController {
+class CreateRecordViewController: UIViewController {
   private let bag = DisposeBag()
   private let scalePickerContainer = ScalePickerContainer()
   private let textInput: UITextField = {
@@ -24,7 +23,7 @@ class MainViewController: UIViewController {
   }()
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .black
+    view.backgroundColor = .background
     view.addSubview(scalePickerContainer)
     scalePickerContainer.snp.makeConstraints { make in
       make.center.equalTo(self.view)

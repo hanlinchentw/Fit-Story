@@ -27,6 +27,9 @@ extension UIImage {
   static var albumActive: UIImage {
     UIImage(named: "album_active")!
   }
+  static var createRecord: UIImage {
+    UIImage(named: "create_record")!
+  }
   // common
   static var chevronLeft: UIImage {
     UIImage(named: "chevron_left")!

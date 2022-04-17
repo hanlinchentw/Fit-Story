@@ -13,11 +13,15 @@
 		B6365A29280319BE00462018 /* ScalePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A28280319BE00462018 /* ScalePickerViewModel.swift */; };
 		B6365A2B28031F2A00462018 /* ScalePickerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A2A28031F2A00462018 /* ScalePickerContainer.swift */; };
 		B6365A2D280BD4F500462018 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A2C280BD4F500462018 /* MainTabBarController.swift */; };
+		B6365A33280BDCEE00462018 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A32280BDCEE00462018 /* ProgressViewController.swift */; };
+		B6365A35280BDCFA00462018 /* AlbumVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A34280BDCFA00462018 /* AlbumVIewController.swift */; };
+		B6365A38280BDF1500462018 /* CreateRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A37280BDF1500462018 /* CreateRecordViewController.swift */; };
+		B6365A3A280BE31A00462018 /* PresentationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6365A39280BE31A00462018 /* PresentationHelper.swift */; };
 		B657C1352801675200597F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C1342801675200597F4A /* AppDelegate.swift */; };
 		B657C1372801675200597F4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C1362801675200597F4A /* SceneDelegate.swift */; };
 		B657C13E2801675400597F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B657C13D2801675400597F4A /* Assets.xcassets */; };
 		B657C1412801675400597F4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B657C13F2801675400597F4A /* LaunchScreen.storyboard */; };
-		B657C14B280167DD00597F4A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C14A280167DD00597F4A /* MainViewController.swift */; };
+		B657C14B280167DD00597F4A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C14A280167DD00597F4A /* HomeViewController.swift */; };
 		B657C16328016B6A00597F4A /* ChakraPetch-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B657C15828016B6A00597F4A /* ChakraPetch-SemiBold.ttf */; };
 		B657C16528016B6A00597F4A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = B657C15A28016B6A00597F4A /* OFL.txt */; };
 		B657C16628016B6A00597F4A /* ChakraPetch-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B657C15B28016B6A00597F4A /* ChakraPetch-Medium.ttf */; };
@@ -37,13 +41,17 @@
 		B6365A28280319BE00462018 /* ScalePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerViewModel.swift; sourceTree = "<group>"; };
 		B6365A2A28031F2A00462018 /* ScalePickerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePickerContainer.swift; sourceTree = "<group>"; };
 		B6365A2C280BD4F500462018 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B6365A32280BDCEE00462018 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		B6365A34280BDCFA00462018 /* AlbumVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumVIewController.swift; sourceTree = "<group>"; };
+		B6365A37280BDF1500462018 /* CreateRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordViewController.swift; sourceTree = "<group>"; };
+		B6365A39280BE31A00462018 /* PresentationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationHelper.swift; sourceTree = "<group>"; };
 		B657C1312801675200597F4A /* Fit Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fit Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B657C1342801675200597F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B657C1362801675200597F4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B657C13D2801675400597F4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B657C1402801675400597F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B657C1422801675400597F4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B657C14A280167DD00597F4A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B657C14A280167DD00597F4A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B657C15828016B6A00597F4A /* ChakraPetch-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-SemiBold.ttf"; sourceTree = "<group>"; };
 		B657C15A28016B6A00597F4A /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		B657C15B28016B6A00597F4A /* ChakraPetch-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Medium.ttf"; sourceTree = "<group>"; };
@@ -85,6 +93,38 @@
 				DA9C0B6044FA33E3AA96C813 /* Pods-Fit Story.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B6365A2F280BDCA100462018 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B657C14A280167DD00597F4A /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B6365A30280BDCBC00462018 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				B6365A32280BDCEE00462018 /* ProgressViewController.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		B6365A31280BDCD300462018 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				B6365A34280BDCFA00462018 /* AlbumVIewController.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		B6365A36280BDEEA00462018 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				B6365A37280BDF1500462018 /* CreateRecordViewController.swift */,
+			);
+			path = Record;
 			sourceTree = "<group>";
 		};
 		B657C1282801675200597F4A = {
@@ -133,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				B657C14C2801694300597F4A /* Authentication */,
-				B657C14D2801695300597F4A /* Home */,
+				B657C14D2801695300597F4A /* Main */,
 				B657C17028018D5C00597F4A /* Reuseable */,
 			);
 			path = View;
@@ -146,13 +186,16 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		B657C14D2801695300597F4A /* Home */ = {
+		B657C14D2801695300597F4A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B657C14A280167DD00597F4A /* MainViewController.swift */,
 				B6365A2C280BD4F500462018 /* MainTabBarController.swift */,
+				B6365A2F280BDCA100462018 /* Home */,
+				B6365A30280BDCBC00462018 /* Progress */,
+				B6365A31280BDCD300462018 /* Album */,
+				B6365A36280BDEEA00462018 /* Record */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		B657C14F28016A6D00597F4A /* Extensions */ = {
@@ -168,6 +211,7 @@
 		B657C15028016A7F00597F4A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B6365A39280BE31A00462018 /* PresentationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -340,9 +384,13 @@
 				B657C16F280189E900597F4A /* IconLibrary.swift in Sources */,
 				B6365A252802B4A700462018 /* ScalePickerCell.swift in Sources */,
 				B6365A2D280BD4F500462018 /* MainTabBarController.swift in Sources */,
-				B657C14B280167DD00597F4A /* MainViewController.swift in Sources */,
+				B657C14B280167DD00597F4A /* HomeViewController.swift in Sources */,
+				B6365A3A280BE31A00462018 /* PresentationHelper.swift in Sources */,
+				B6365A33280BDCEE00462018 /* ProgressViewController.swift in Sources */,
+				B6365A38280BDF1500462018 /* CreateRecordViewController.swift in Sources */,
 				B657C1352801675200597F4A /* AppDelegate.swift in Sources */,
 				B657C17228018D7A00597F4A /* HexButton.swift in Sources */,
+				B6365A35280BDCFA00462018 /* AlbumVIewController.swift in Sources */,
 				B6365A2B28031F2A00462018 /* ScalePickerContainer.swift in Sources */,
 				B657C1372801675200597F4A /* SceneDelegate.swift in Sources */,
 			);
