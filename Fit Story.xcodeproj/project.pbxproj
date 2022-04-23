@@ -41,6 +41,11 @@
 		B699B7952813DC5400F65C45 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7942813DC5400F65C45 /* Record.swift */; };
 		B699B7972813F81200F65C45 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7962813F81200F65C45 /* UIViewController+Extensions.swift */; };
 		B699B7992813FA2C00F65C45 /* RecordCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7982813FA2C00F65C45 /* RecordCollectionViewHeader.swift */; };
+		B699B79B2813FF4300F65C45 /* PhotoPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B79A2813FF4300F65C45 /* PhotoPlaceholder.swift */; };
+		B699B79E281403A300F65C45 /* PhotoSelectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B79D281403A300F65C45 /* PhotoSelectCollectionView.swift */; };
+		B699B7A02814057000F65C45 /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B79F2814057000F65C45 /* PhotoSelectCollectionViewCell.swift */; };
+		B699B7A2281405A900F65C45 /* PhotoSelectCollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7A1281405A900F65C45 /* PhotoSelectCollectionViewFooter.swift */; };
+		B699B7A42814610000F65C45 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7A32814610000F65C45 /* UIAlertController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +87,11 @@
 		B699B7942813DC5400F65C45 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		B699B7962813F81200F65C45 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B699B7982813FA2C00F65C45 /* RecordCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewHeader.swift; sourceTree = "<group>"; };
+		B699B79A2813FF4300F65C45 /* PhotoPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPlaceholder.swift; sourceTree = "<group>"; };
+		B699B79D281403A300F65C45 /* PhotoSelectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionView.swift; sourceTree = "<group>"; };
+		B699B79F2814057000F65C45 /* PhotoSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		B699B7A1281405A900F65C45 /* PhotoSelectCollectionViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewFooter.swift; sourceTree = "<group>"; };
+		B699B7A32814610000F65C45 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		DA9C0B6044FA33E3AA96C813 /* Pods-Fit Story.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit Story.release.xcconfig"; path = "Target Support Files/Pods-Fit Story/Pods-Fit Story.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +259,7 @@
 				B624E793280C03AA005377F6 /* UIbutton+extensions.swift */,
 				B699B7902813D26C00F65C45 /* CommonProtocol.swift */,
 				B699B7962813F81200F65C45 /* UIViewController+Extensions.swift */,
+				B699B7A32814610000F65C45 /* UIAlertController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +301,10 @@
 				B699B78E2813CD0300F65C45 /* RecordCollectionViewCell.swift */,
 				B699B7922813DC1A00F65C45 /* RecordCollectionViewCellViewModel.swift */,
 				B699B7982813FA2C00F65C45 /* RecordCollectionViewHeader.swift */,
+				B699B79A2813FF4300F65C45 /* PhotoPlaceholder.swift */,
+				B699B79D281403A300F65C45 /* PhotoSelectCollectionView.swift */,
+				B699B79F2814057000F65C45 /* PhotoSelectCollectionViewCell.swift */,
+				B699B7A1281405A900F65C45 /* PhotoSelectCollectionViewFooter.swift */,
 			);
 			path = RecordCollectionView;
 			sourceTree = "<group>";
@@ -440,10 +455,12 @@
 				B6365A272802C07700462018 /* ScalePickerCellViewModel.swift in Sources */,
 				B6365A29280319BE00462018 /* ScalePickerViewModel.swift in Sources */,
 				B657C16F280189E900597F4A /* IconLibrary.swift in Sources */,
+				B699B7A2281405A900F65C45 /* PhotoSelectCollectionViewFooter.swift in Sources */,
 				B6365A252802B4A700462018 /* ScalePickerCell.swift in Sources */,
 				B624E792280BFDD3005377F6 /* UILabel+Extensions.swift in Sources */,
 				B6365A2D280BD4F500462018 /* MainTabBarController.swift in Sources */,
 				B699B78C2813C9CC00F65C45 /* RecordCollectionViewModel.swift in Sources */,
+				B699B79B2813FF4300F65C45 /* PhotoPlaceholder.swift in Sources */,
 				B657C14B280167DD00597F4A /* HomeViewController.swift in Sources */,
 				B6365A3A280BE31A00462018 /* PresentationHelper.swift in Sources */,
 				B6365A33280BDCEE00462018 /* ProgressViewController.swift in Sources */,
@@ -453,8 +470,11 @@
 				B699B7992813FA2C00F65C45 /* RecordCollectionViewHeader.swift in Sources */,
 				B657C17228018D7A00597F4A /* HexButton.swift in Sources */,
 				B699B7912813D26C00F65C45 /* CommonProtocol.swift in Sources */,
+				B699B79E281403A300F65C45 /* PhotoSelectCollectionView.swift in Sources */,
+				B699B7A42814610000F65C45 /* UIAlertController+Extensions.swift in Sources */,
 				B699B7932813DC1A00F65C45 /* RecordCollectionViewCellViewModel.swift in Sources */,
 				B699B78F2813CD0300F65C45 /* RecordCollectionViewCell.swift in Sources */,
+				B699B7A02814057000F65C45 /* PhotoSelectCollectionViewCell.swift in Sources */,
 				B6365A2B28031F2A00462018 /* ScalePickerContainer.swift in Sources */,
 				B657C1372801675200597F4A /* SceneDelegate.swift in Sources */,
 			);
