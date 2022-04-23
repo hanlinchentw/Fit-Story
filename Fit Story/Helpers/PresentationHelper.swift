@@ -17,4 +17,11 @@ class PresentationHelper: NSObject {
       .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
       .first { $0.isKeyWindow }?.rootViewController
   }
+
+  func presentDatePickerViewController() {
+    let datePicker = DatePickerViewController()
+    datePicker.modalPresentationStyle = .overFullScreen
+    datePicker.modalTransitionStyle = .crossDissolve
+    self.topViewController?.present(datePicker, animated: true, completion: nil)
+  }
 }

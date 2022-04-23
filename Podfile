@@ -8,6 +8,7 @@ pod 'SnapKit', '~> 5.0.0'
 pod 'SwiftLint'
 pod 'RxSwift', '6.5.0'
 pod 'RxCocoa', '6.5.0'
+pod 'RxDataSources'
   # Pods for Fit Story
 
 end

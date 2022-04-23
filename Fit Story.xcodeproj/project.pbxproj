@@ -33,6 +33,14 @@
 		B657C16F280189E900597F4A /* IconLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C16E280189E900597F4A /* IconLibrary.swift */; };
 		B657C17228018D7A00597F4A /* HexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C17128018D7A00597F4A /* HexButton.swift */; };
 		B657C1792802B33600597F4A /* ScalePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C1782802B33600597F4A /* ScalePicker.swift */; };
+		B699B7892813C8F500F65C45 /* RecordCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7882813C8F500F65C45 /* RecordCollectionViewController.swift */; };
+		B699B78C2813C9CC00F65C45 /* RecordCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B78B2813C9CC00F65C45 /* RecordCollectionViewModel.swift */; };
+		B699B78F2813CD0300F65C45 /* RecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B78E2813CD0300F65C45 /* RecordCollectionViewCell.swift */; };
+		B699B7912813D26C00F65C45 /* CommonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7902813D26C00F65C45 /* CommonProtocol.swift */; };
+		B699B7932813DC1A00F65C45 /* RecordCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7922813DC1A00F65C45 /* RecordCollectionViewCellViewModel.swift */; };
+		B699B7952813DC5400F65C45 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7942813DC5400F65C45 /* Record.swift */; };
+		B699B7972813F81200F65C45 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7962813F81200F65C45 /* UIViewController+Extensions.swift */; };
+		B699B7992813FA2C00F65C45 /* RecordCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B7982813FA2C00F65C45 /* RecordCollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +74,14 @@
 		B657C17128018D7A00597F4A /* HexButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexButton.swift; sourceTree = "<group>"; };
 		B657C1742801DE7700597F4A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../../Downloads/RxSwift.xcframework/ios-arm64_armv7/RxSwift.framework"; sourceTree = "<group>"; };
 		B657C1782802B33600597F4A /* ScalePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePicker.swift; sourceTree = "<group>"; };
+		B699B7882813C8F500F65C45 /* RecordCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewController.swift; sourceTree = "<group>"; };
+		B699B78B2813C9CC00F65C45 /* RecordCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewModel.swift; sourceTree = "<group>"; };
+		B699B78E2813CD0300F65C45 /* RecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewCell.swift; sourceTree = "<group>"; };
+		B699B7902813D26C00F65C45 /* CommonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonProtocol.swift; sourceTree = "<group>"; };
+		B699B7922813DC1A00F65C45 /* RecordCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		B699B7942813DC5400F65C45 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		B699B7962813F81200F65C45 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B699B7982813FA2C00F65C45 /* RecordCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewHeader.swift; sourceTree = "<group>"; };
 		DA9C0B6044FA33E3AA96C813 /* Pods-Fit Story.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit Story.release.xcconfig"; path = "Target Support Files/Pods-Fit Story/Pods-Fit Story.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				B6365A37280BDF1500462018 /* CreateRecordViewController.swift */,
+				B699B78D2813C9E900F65C45 /* RecordCollectionView */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -189,6 +206,7 @@
 		B657C148280167A600597F4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B699B7942813DC5400F65C45 /* Record.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +247,8 @@
 				B657C16E280189E900597F4A /* IconLibrary.swift */,
 				B624E791280BFDD3005377F6 /* UILabel+Extensions.swift */,
 				B624E793280C03AA005377F6 /* UIbutton+extensions.swift */,
+				B699B7902813D26C00F65C45 /* CommonProtocol.swift */,
+				B699B7962813F81200F65C45 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +280,18 @@
 				B624E795280C722D005377F6 /* DatePicker */,
 			);
 			path = Reuseable;
+			sourceTree = "<group>";
+		};
+		B699B78D2813C9E900F65C45 /* RecordCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B699B7882813C8F500F65C45 /* RecordCollectionViewController.swift */,
+				B699B78B2813C9CC00F65C45 /* RecordCollectionViewModel.swift */,
+				B699B78E2813CD0300F65C45 /* RecordCollectionViewCell.swift */,
+				B699B7922813DC1A00F65C45 /* RecordCollectionViewCellViewModel.swift */,
+				B699B7982813FA2C00F65C45 /* RecordCollectionViewHeader.swift */,
+			);
+			path = RecordCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +431,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B657C16B280183D400597F4A /* FontLibrary.swift in Sources */,
+				B699B7892813C8F500F65C45 /* RecordCollectionViewController.swift in Sources */,
+				B699B7972813F81200F65C45 /* UIViewController+Extensions.swift in Sources */,
+				B699B7952813DC5400F65C45 /* Record.swift in Sources */,
 				B657C16D2801853200597F4A /* ColorLibrary.swift in Sources */,
 				B624E790280BF735005377F6 /* DatePickerViewController.swift in Sources */,
 				B657C1792802B33600597F4A /* ScalePicker.swift in Sources */,
@@ -408,13 +443,18 @@
 				B6365A252802B4A700462018 /* ScalePickerCell.swift in Sources */,
 				B624E792280BFDD3005377F6 /* UILabel+Extensions.swift in Sources */,
 				B6365A2D280BD4F500462018 /* MainTabBarController.swift in Sources */,
+				B699B78C2813C9CC00F65C45 /* RecordCollectionViewModel.swift in Sources */,
 				B657C14B280167DD00597F4A /* HomeViewController.swift in Sources */,
 				B6365A3A280BE31A00462018 /* PresentationHelper.swift in Sources */,
 				B6365A33280BDCEE00462018 /* ProgressViewController.swift in Sources */,
 				B624E794280C03AA005377F6 /* UIbutton+extensions.swift in Sources */,
 				B6365A38280BDF1500462018 /* CreateRecordViewController.swift in Sources */,
 				B657C1352801675200597F4A /* AppDelegate.swift in Sources */,
+				B699B7992813FA2C00F65C45 /* RecordCollectionViewHeader.swift in Sources */,
 				B657C17228018D7A00597F4A /* HexButton.swift in Sources */,
+				B699B7912813D26C00F65C45 /* CommonProtocol.swift in Sources */,
+				B699B7932813DC1A00F65C45 /* RecordCollectionViewCellViewModel.swift in Sources */,
+				B699B78F2813CD0300F65C45 /* RecordCollectionViewCell.swift in Sources */,
 				B6365A2B28031F2A00462018 /* ScalePickerContainer.swift in Sources */,
 				B657C1372801675200597F4A /* SceneDelegate.swift in Sources */,
 			);

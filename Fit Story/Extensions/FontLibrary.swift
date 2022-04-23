@@ -34,4 +34,15 @@ extension UIFont {
   static func regularChakra(of size: FontSize) -> UIFont? {
     UIFont(name: "ChakraPetch-Regular", size: size.rawValue)
   }
+
+  func getChakraFont(_ weight: UIFont.FontWeight, _ fontSize: UIFont.FontSize) -> UIFont? {
+    switch (weight) {
+    case .regular:
+      return UIFont.regularChakra(of: fontSize)
+    case .medium:
+      return UIFont.mediumChakra(of: fontSize)
+    case .semiBold:
+      return UIFont.semiBoldChakra(of: fontSize)
+    }
+  }
 }

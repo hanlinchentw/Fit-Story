@@ -14,26 +14,32 @@ let fakeDatasource: [Double] = (0...1000).map { Double($0)/10 }
 class ScalePickerContainer: UIView {
 // MARK: - Properties
   // Rx
-  var scaleNumber = PublishSubject<Double>()
-  var scrollInput: Observable<Double?>
+  var typingOutput = PublishSubject<Double>()
+
+  var scrollOutput: Observable<Double?>
+
   private let bag = DisposeBag()
+
   // UI
   private var scalePicker: ScalePicker
+
   private let middleBarImageView: UIImageView = {
     let iv = UIImageView(image: UIImage.middleBar)
     iv.contentMode = .scaleAspectFit
     return iv
   }()
+
   private var displayScaleLabel: UILabel = {
     let label = UILabel()
     label.textColor = .darkGreen
     label.font = UIFont.semiBoldChakra(of: .h4)
     return label
   }()
+
 // MARK: - Lifecycle
   override init(frame: CGRect) {
-    scalePicker = ScalePicker(dataSource: fakeDatasource, userTypingValue: scaleNumber.asObservable())
-    scrollInput = scalePicker.vm.outputs.userScrollCorrespondingNumber
+    scalePicker = ScalePicker(dataSource: fakeDatasource, userTypingValue: typingOutput.asObservable())
+    scrollOutput = scalePicker.vm.outputs.userScrollCorrespondingNumber
     super.init(frame: .zero)
     setupUI()
     binding()
@@ -47,11 +53,12 @@ class ScalePickerContainer: UIView {
   }
 // MARK: - Binding
   func binding() {
-    scaleNumber
+    typingOutput
       .map({String($0)})
       .bind(to: displayScaleLabel.rx.text)
       .disposed(by: bag)
-    scrollInput
+
+    scrollOutput
       .filter({$0 != nil})
       .map({String($0!)})
       .bind(to: displayScaleLabel.rx.text)

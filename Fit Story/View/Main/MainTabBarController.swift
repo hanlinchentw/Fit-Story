@@ -62,7 +62,6 @@ extension MainTabBarController: UITabBarControllerDelegate {
     bounceAnimation.values = [1.0, 1.3, 0.9, 1.02, 1.0]
     bounceAnimation.duration = TimeInterval(0.43)
     bounceAnimation.calculationMode = CAAnimationCalculationMode.cubic
-
     imageView.layer.add(bounceAnimation, forKey: nil)
   }
 }
